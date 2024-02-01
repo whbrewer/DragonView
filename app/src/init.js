@@ -10,12 +10,11 @@ require.config({
     text: '../lib/requirejs-text/text',
     jquery: '../lib/jquery/dist/jquery.min',
     jqueryui: '../lib/jquery-ui/jquery-ui.min',
-    underscore: '../lib/lodash/lodash.min',
-    //underscore: '../lib/underscore/underscore',
+    underscore: '../lib/lodash/dist/lodash.min',
     backbone: '../lib/backbone/backbone',
     radio: '../lib/backbone.radio/build/backbone.radio',
     d3: '../lib/d3/d3',
-    d3_queue: '../lib/queue-async/queue',
+    d3_queue: '../lib/jquery/src/queue',
     resize: '../lib-code/jquery-element-onresize'
   }
 });

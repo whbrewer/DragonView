@@ -11,7 +11,7 @@ metrics on the router or node.
 * Download and install [nodejs](https://nodejs.org "Title")
 * Install bower
 
-Note: *"-g"* means global installation and on OSX must be run as sudo. You can install bower locally without the *"-g"*
+Note: *"-g"* means global installation and on macOS must be run as sudo. You can install bower locally without the *"-g"*
 ```
 npm install -g bower
 ```

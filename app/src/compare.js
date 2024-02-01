@@ -187,16 +187,13 @@ define(function(require) {
     d3.select('#columns')[0][0].scrollLeft = this.scrollLeft;
   });
 
-d3.csv('/data/alldata.csv')
-  .row(function(d) {
-    //d.jobid = +d.jobid;
-    //d.color =   fields.color.values[d.color];
+d3.csv('/data/alldata.csv').then(function(data) {
+  data.forEach(function(d) {
     d.min = +d.min;
     d.avg = +d.avg;
     d.max = +d.max;
     d.nonzero = +d.nonzero;
     d.navg = +d.navg;
-    return d;
   })
   .get(function(error, rows) {
     if (error) {
@@ -619,7 +616,6 @@ d3.csv('/data/alldata.csv')
       .on('click', select)
       .on('mouseover', report)
       .on('mouseout', mouseout);
-
 
     d3nodes
       .style('left', function(d) { return d.x+"px";})

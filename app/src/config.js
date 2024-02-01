@@ -9,12 +9,12 @@ define(function(require) {
   var d3 = require('d3');
 
 
-  var value_band = d3.scale.linear().rangeRound([8, 0]);
+  var value_band = d3.scaleLinear().rangeRound([8, 0]);
   var VALUES_COLORMAP =["#4575b4", "#74add1", "#abd9e9", "#e0f3f8", "#ffffbf", "#fee090", "#fdae61", "#f46d43", "#d73027"];
   var JOBS_COLORMAP = colorbrewer.Set2[8];
-  var value_color = d3.scale.ordinal().domain([0, 8]).range(VALUES_COLORMAP);
-  var scale = d3.scale.quantize().domain([0,1]).range(VALUES_COLORMAP);
-  var value_scale = d3.scale.linear().domain([0, 0.5, 1]).range([0, 0.5, 1]).clamp(true);
+  var value_color = d3.scaleOrdinal().domain([0, 8]).range(VALUES_COLORMAP);
+  var scale = d3.scaleQuantize().domain([0,1]).range(VALUES_COLORMAP);
+  var value_scale = d3.scaleLinear().domain([0, 0.5, 1]).range([0, 0.5, 1]).clamp(true);
   var data_range = [0, 1];
 
   return {
@@ -45,7 +45,7 @@ define(function(require) {
       return scale(value_scale(v));
     },
 
-    color2: d3.scale.linear()
+    color2: d3.scaleLinear()
       .range(['#ff0000', '#00ff00'])
       .interpolate(d3.interpolateHcl)
   }
